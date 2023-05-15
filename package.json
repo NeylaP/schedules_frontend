@@ -1,14 +1,21 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
+  "name": "yarn",
+  "version": "1.22",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
+    "react-dom": "^17.0.0",
+    "react-notifications-component": "^4.0.1",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "^2.1.3",
+    "react-toastify": "^9.1.3",
+    "redux": "^4.2.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -34,5 +41,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "nada",
+  "main": "index.js",
+  "author": "NeylaP <neyla1998@outlook.es>",
+  "license": "MIT"
 }
