@@ -102,7 +102,7 @@ export const ingresarApp = (data) => {
   });
 };
 
-export const validarUsuarioApp = () => {
+export const validarUsuarioSesion = () => {
   return new Promise((resolve) => {
     if (localStorage.getItem("token")) {
       fetch(`${api}/api/v1.0/current_user`, {
@@ -124,7 +124,7 @@ export const validarUsuarioApp = () => {
   });
 };
 
-export const CerrarApp = () => {
+export const CerrarSesion = () => {
   return new Promise((resolve) => {
     localStorage.removeItem("token");
     resolve(true);

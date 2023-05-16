@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-
+import React, { Fragment, useEffect, useState } from "react";
 import 'react-toastify/dist/ReactToastify.css';
 import {
-  Button,Table,TableBody,TableCell,TableContainer,TableHead,TableRow,Paper, makeStyles, Grid, Dialog, DialogTitle, DialogContent, TextField, DialogActions, DialogContentText,
+  Button,Table,TableBody,TableCell,TableContainer,TableHead,TableRow,Paper, makeStyles, Grid, Dialog, DialogTitle, DialogContent, TextField, DialogActions, DialogContentText, FormControl, InputLabel, FormControlLabel,
 } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
@@ -23,7 +22,7 @@ const Usuarios = () => {
   const [last_name, setLastName] = useState("");
   const [first_name, setFirstName] = useState("");
   const [ssn, setSsn] = useState("");
-  const [dob, setDob] = useState("");
+  const [dob, setDob] = useState(null);
   const [city, setCity] = useState("");
   const [address, setAddress] = useState("");
   const [zip, setZip] = useState("");
@@ -190,6 +189,10 @@ const handleClick=()=>{
     setOpen(true);
     setCreating(true)
 }
+
+const handleDateChange=(date)=>{
+  setDob(date);
+}
   return (
     <div>
         <Grid container className={classes.cardsContainer}>
@@ -248,14 +251,38 @@ const handleClick=()=>{
                 label="SSN"
                 value={ssn}
                 onChange={(event) => setSsn(event.target.value)}
+                type="number"
                 fullWidth
             />
+            <FormControl fullWidth>
             <TextField
-                label="Fecha de Nacimiento"
+                label="Fecha de nacimiento"
                 value={dob}
                 onChange={(event) => setDob(event.target.value)}
                 fullWidth
+                type="date"
+                InputLabelProps={{
+                  shrink: true,
+                }}
             />
+            </FormControl>
+            {/* <MuiPickersUtilsProvider utils={DateFnsUtils} >
+              <Fragment>
+                <KeyboardDateTimePicker
+                  required={true}                           
+                  style={{ marginTop: 3, width: '100%' }}
+                  format="MM/dd/yyyy"
+                  margin="normal"
+                  label="Fecha de Nacimiento"
+                  value={dob}
+                  onChange={(event) => setDob(event.target.value)}
+                  name="dob"
+                  fullWidth
+                  KeyboardButtonProps={{'aria-label': 'change date',}}
+                  invalidDateMessage='Formato Invalido'
+                />
+              </Fragment>
+            </MuiPickersUtilsProvider> */}
             <TextField
                 label="Dirección"
                 value={address}
@@ -273,12 +300,14 @@ const handleClick=()=>{
                 value={zip}
                 onChange={(event) => setZip(event.target.value)}
                 fullWidth
+                type="number"
             />
             <TextField
                 label="Celular"
                 value={phone}
                 onChange={(event) => setPhone(event.target.value)}
                 fullWidth
+                type="number"
             />
             <TextField
                 label="Email"

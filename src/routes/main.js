@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { validarUsuarioApp, CerrarApp } from '../global/funciones';
+import { validarUsuarioSesion } from '../global/funciones';
 import LoginPage from '../components/general/Login';
 import Homepage from '../components/general/homepage';
 function Main() {
@@ -12,7 +12,7 @@ function Main() {
     });
   
   const isAuth = async () => {
-        let { estado, resp } = await validarUsuarioApp();
+        let { estado, resp } = await validarUsuarioSesion();
         if (estado === 200) {
             setEstado(true)
         } else {
