@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
 
 const cardData = [
   {
-    title: "Usuarios",
+    title: "Conductores",
     description: "En este apartado podra realizar todas las tareas correspodientes a los usuarios",
     image: chofer,
     codigo:"usuarios_card"

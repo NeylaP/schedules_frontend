@@ -199,7 +199,6 @@ const handleChange = (event) => {
                 <Table className={classes.table} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                    <TableCell>ID</TableCell>
                     <TableCell align="right">Descripción</TableCell>
                     <TableCell align="right">Conductor</TableCell>
                     <TableCell align="right">Vehiculo</TableCell>
@@ -209,9 +208,6 @@ const handleChange = (event) => {
                 <TableBody>
                     {rutas.map((item) => (
                     <TableRow key={item.id}>
-                        <TableCell component="th" scope="row">
-                        {item.id}
-                        </TableCell>
                         <TableCell align="right">{item.description}</TableCell>
                         <TableCell align="right">{item.driver.first_name+" "+item.driver.last_name}</TableCell>
                         <TableCell align="right">{item.vehicle.description}</TableCell>

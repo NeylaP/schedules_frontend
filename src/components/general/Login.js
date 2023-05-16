@@ -45,7 +45,7 @@ function LoginPage() {
         </Box>
         <form style={{ display: 'flex', flexDirection: 'column' }}>
             <TextField required fullWidth id="email" name="email" autoFocus onChange={onChangeForm} label="Email" variant="outlined" margin="normal"/>
-            <TextField required fullWidth id="password" name="password" autoFocus onChange={onChangeForm} label="Password" variant="outlined" margin="normal"/>
+            <TextField required fullWidth type="password" id="password" name="password" autoFocus onChange={onChangeForm} label="Password" variant="outlined" margin="normal"/>
             <Button variant="contained" color="primary" style={{ marginTop: 10 }} onClick={onSubmit}>Login</Button>
         </form>
         </Paper>

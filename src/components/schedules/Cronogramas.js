@@ -193,24 +193,22 @@ function Cronogramas () {
                 <Table className={classes.table} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                    <TableCell>ID</TableCell>
                     <TableCell align="right">Num. Semanas</TableCell>
                     <TableCell align="right">Fecha inicio</TableCell>
                     <TableCell align="right">Fecha fin</TableCell>
                     <TableCell align="right">Ruta</TableCell>
+                    <TableCell align="right">Conductor</TableCell>
                     <TableCell align="right">Acciones</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {cronogramas.map((item) => (
                     <TableRow key={item.id}>
-                        <TableCell component="th" scope="row">
-                        {item.id}
-                        </TableCell>
                         <TableCell align="right">{item.week_num}</TableCell>
                         <TableCell align="right">{item.from_date}</TableCell>
                         <TableCell align="right">{item.to_date}</TableCell>
                         <TableCell align="right">{item.route.description}</TableCell>
+                        <TableCell align="right">{item.route.driver.first_name+" "+item.route.driver.last_name}</TableCell>
                         <TableCell align="right">
                         <Button onClick={() => handleDelete(item)}>
                             <DeleteIcon />

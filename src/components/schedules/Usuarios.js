@@ -201,22 +201,24 @@ const handleDateChange=(date)=>{
                 <Table className={classes.table} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                    <TableCell>ID</TableCell>
                     <TableCell align="right">Nombre</TableCell>
                     <TableCell align="right">SSN</TableCell>
                     <TableCell align="right">Email</TableCell>
+                    <TableCell align="right">Telefono</TableCell>
+                    <TableCell align="right">Dirección</TableCell>
+                    <TableCell align="right">Ciudad</TableCell>
                     <TableCell align="right">Acciones</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {usuarios.map((item) => (
                     <TableRow key={item.id}>
-                        <TableCell component="th" scope="row">
-                        {item.id}
-                        </TableCell>
                         <TableCell align="right">{item.first_name+" "+item.last_name}</TableCell>
                         <TableCell align="right">{item.ssn}</TableCell>
                         <TableCell align="right">{item.email}</TableCell>
+                        <TableCell align="right">{item.phone}</TableCell>
+                        <TableCell align="right">{item.address}</TableCell>
+                        <TableCell align="right">{item.city}</TableCell>
                         <TableCell align="right">
                         <Button onClick={() => handleDelete(item)}>
                             <DeleteIcon />

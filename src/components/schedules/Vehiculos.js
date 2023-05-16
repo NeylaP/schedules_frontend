@@ -175,7 +175,6 @@ const handleClick=()=>{
                 <Table className={classes.table} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                    <TableCell>ID</TableCell>
                     <TableCell align="right">Año</TableCell>
                     <TableCell align="right">Make</TableCell>
                     <TableCell align="right">Capacidad</TableCell>
@@ -186,9 +185,6 @@ const handleClick=()=>{
                 <TableBody>
                     {vehiculos.map((item) => (
                     <TableRow key={item.id}>
-                        <TableCell component="th" scope="row">
-                        {item.id}
-                        </TableCell>
                         <TableCell align="right">{item.year}</TableCell>
                         <TableCell align="right">{item.make}</TableCell>
                         <TableCell align="right">{item.capacity}</TableCell>
